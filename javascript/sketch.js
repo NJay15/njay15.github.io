@@ -1,20 +1,26 @@
 var font;
+var fonts = ['Avenir', 'LemonMilk']
 var vehicles = [];
 var points = [];
 var params;
 var txt;
+var margin;
 
 function preload() {
-  font = loadFont('fonts/AvenirNextLTPro-Demi.otf');
+  params = getURLParams();
+  var i = 0;
+  if(params.font){
+	i = params.font;
+  }
+  font = loadFont('fonts/' + fonts[i] + '.otf');
 }
 
 function setup() {
   createCanvas(window.innerWidth, window.innerHeight);
   background(51);
   txt = 'NJ';
-  params = getURLParams();
   if(params.text){
-    txt = params.text;
+    txt = params.text.toUpperCase();
   }
   updateText();
 }
@@ -24,8 +30,6 @@ function draw() {
   
   fill(255);
   stroke(0);
-  //var bounds = font.textBounds(txt, 192);
-  //rect(100, 200, 80, textWidth());
   
   for (var i = 0; i < vehicles.length; i++) {
     var v = vehicles[i];
@@ -56,10 +60,15 @@ function keyTyped() {
   }
 }
 
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+  margin = 500 * windowWidth / 1920;
+  updateText();
+}
+
 function updateText(){
   textAlign(CENTER);
   textFont(font);
-  var margin = 500;
   var tsize = 192;
   do{
     textSize(tsize);
