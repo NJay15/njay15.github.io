@@ -1,6 +1,7 @@
 var font;
 var vehicles = [];
 var points = [];
+var params;
 var txt;
 
 function preload() {
@@ -11,9 +12,9 @@ function setup() {
   createCanvas(window.innerWidth, window.innerHeight);
   background(51);
   txt = 'NJ';
-  var params = getURLParams();
+  params = getURLParams();
   if(params.text){
-	  txt = params.text;
+    txt = params.text;
   }
   updateText();
 }
@@ -27,22 +28,20 @@ function draw() {
   //rect(100, 200, 80, textWidth());
   
   for (var i = 0; i < vehicles.length; i++) {
-	var v = vehicles[i];
-	v.behaviors();
+    var v = vehicles[i];
+    v.behaviors();
     v.update();
     v.show();
-    if(i + 1 < vehicles.length){
+    if(params.lines !== 'false' && i + 1 < vehicles.length){
 	  var d = dist(v.pos.x, v.pos.y, vehicles[i+1].pos.x, vehicles[i+1].pos.y);
 	  if(d < 40){
-		var alpha = map(d, 40, 20, 0, 255)
-		var col = color(255, 255, 255, alpha);
+	    var alpha = map(d, 40, 20, 0, 255)
+	    var col = color(255, 255, 255, alpha);
 	    strokeWeight(4);
 	    stroke(col);
 	    line(v.pos.x, v.pos.y, vehicles[i+1].pos.x, vehicles[i+1].pos.y);
 	  }
-	}
-    
-	
+    }
   }
 }
 
