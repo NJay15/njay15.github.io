@@ -1,10 +1,10 @@
-// Daniel Shiffman
-// http://codingtra.in
-// Steering Text Paths
-// Video: https://www.youtube.com/watch?v=4hA7G3gup-4
-
 function Vehicle(x, y) {
   this.pos = createVector(random(width), random(height));
+  if(params.outBounds === 'true'){
+    var wr = random([-1, 1]);
+    var hr = random([-1, 1]);
+    this.pos.add(createVector(width * wr, height * hr));
+  }
   this.target = createVector(x, y);
   this.vel = p5.Vector.random2D();
   this.acc = createVector();
