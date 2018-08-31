@@ -4,7 +4,7 @@ var points = [];
 var txt;
 
 function preload() {
-  font = loadFont('AvenirNextLTPro-Demi.otf');
+  font = loadFont('fonts/AvenirNextLTPro-Demi.otf');
 }
 
 function setup() {
