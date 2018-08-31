@@ -50,7 +50,7 @@ function keyTyped() {
   if (keyCode === BACKSPACE) {
     txt = txt.substring(0, txt.length - 1);
     updateText();
-    return true;
+    return false;
   } else {
 	txt += key.toUpperCase();
     updateText();
