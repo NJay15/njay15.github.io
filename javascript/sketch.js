@@ -57,6 +57,7 @@ function keyTyped() {
     return false;
   } else if(keyCode === DOWN_ARROW){
     gravity = !gravity;
+    return false;
   }else{
     txt += key.toUpperCase();
     updateText();
