@@ -51,11 +51,13 @@ function draw() {
 }
 
 function keyTyped() {
+  console.log(keyCode);
+  console.log(keyCode === DOWN_ARROW);
   if (keyCode === BACKSPACE) {
     txt = txt.substring(0, txt.length - 1);
     updateText();
     return false;
-  } else if(keyCode === DOWN_ARROW){
+  }else if(keyCode === DOWN_ARROW) {
     gravity = !gravity;
     return false;
   }else{
