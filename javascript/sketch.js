@@ -5,7 +5,6 @@ var points = [];
 var params;
 var txt;
 var margin;
-var gravity;
 
 function preload() {
   params = getURLParams();
@@ -59,11 +58,6 @@ function keyTyped() {
     txt += key.toUpperCase();
     updateText();
   }
-}
-
-function doubleClicked() {
-  gravity = !gravity;
-  return false;
 }
 
 function windowResized() {
