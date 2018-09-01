@@ -19,7 +19,7 @@ Vehicle.prototype.setTarget = function(x, y) {
 }
 
 Vehicle.prototype.behaviors = function() {
-  if(params.gravity){
+  if(gravity){
     this.setTarget(this.pos.x, height);
   }
   var arrive = this.arrive(this.target);
