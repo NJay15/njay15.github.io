@@ -51,7 +51,7 @@ function draw() {
 }
 
 function keyTyped() {
-  if (keyCode === BACKSPACE) {
+  if (keyCode === DOWN_ARROW) {
     txt = txt.substring(0, txt.length - 1);
     updateText();
     return false;
