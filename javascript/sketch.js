@@ -51,11 +51,11 @@ function draw() {
 }
 
 function keyTyped() {
-  if (keyCode === DOWN_ARROW) {
+  if (keyCode === BACKSPACE) {
     txt = txt.substring(0, txt.length - 1);
     updateText();
     return false;
-  } else if(keyCode === SPACE_BAR){
+  } else if(keyCode === DOWN_ARROW){
     params.gravity = !gravity;
   }else{
     txt += key.toUpperCase();
