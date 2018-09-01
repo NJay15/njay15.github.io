@@ -19,10 +19,12 @@ Vehicle.prototype.setTarget = function(x, y) {
 }
 
 Vehicle.prototype.behaviors = function() {
+  if(gravity){
+    this.setTarget(this.pos.x, height);
+  }
   var arrive = this.arrive(this.target);
   var mouse = createVector(mouseX, mouseY);
   var flee = this.flee(mouse);
-
   arrive.mult(0.5);
   flee.mult(5);
 
