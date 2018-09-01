@@ -56,7 +56,7 @@ function keyTyped() {
     updateText();
     return false;
   } else if(keyCode === SPACE_BAR){
-    gravity = !gravity;
+    params.gravity = !gravity;
   }else{
     txt += key.toUpperCase();
     updateText();
