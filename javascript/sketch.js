@@ -5,7 +5,7 @@ var points = [];
 var params;
 var txt;
 var margin;
-var gravity = false;
+var gravity;
 
 function preload() {
   params = getURLParams();
@@ -56,7 +56,7 @@ function keyTyped() {
     updateText();
     return false;
   } else if(keyCode === DOWN_ARROW){
-    params.gravity = !gravity;
+    gravity = !gravity;
   }else{
     txt += key.toUpperCase();
     updateText();
