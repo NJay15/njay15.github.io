@@ -5,6 +5,7 @@ var points = [];
 var params;
 var txt;
 var margin;
+var gravity = false;
 
 function preload() {
   params = getURLParams();
@@ -54,8 +55,10 @@ function keyTyped() {
     txt = txt.substring(0, txt.length - 1);
     updateText();
     return false;
-  } else {
-	txt += key.toUpperCase();
+  } else if(keyCode === SPACE_BAR){
+    gravity = !gravity;
+  }else{
+    txt += key.toUpperCase();
     updateText();
   }
 }
