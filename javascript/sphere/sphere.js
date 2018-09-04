@@ -8,7 +8,7 @@ var amp;
 var hist;
 
 function preload(){
-	sound = loadSound('assets/PLUTO.mp3');
+	sound = loadSound('assets/nekhma.mp3');
 }
 
 
