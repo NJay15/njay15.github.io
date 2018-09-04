@@ -36,7 +36,7 @@ function draw(){
   strokeWeight(2 + 6 * lvl);
   for(var lon = 0; lon < res; lon++){ 
       colorMode(HSB, 255);
-	    var col = color(map(lon, res, 0, 0, 300), 180, 128);
+	    var col = color(map(lon, res, 0, 0, 300), 200, 200);
         stroke(col);
 		fill(col);
 	  colorMode(RGB, 255);
