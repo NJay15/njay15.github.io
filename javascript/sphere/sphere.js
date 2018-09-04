@@ -1,7 +1,7 @@
 var r = 0;
 var rotZ = 0;
 
-var res = 40;
+var res = 20;
 
 var amp;
 
