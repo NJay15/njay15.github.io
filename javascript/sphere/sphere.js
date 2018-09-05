@@ -14,7 +14,7 @@ function preload(){
 
 function setup(){
   //sound.play();
-  var params = getParams();
+  var params = getParameters();
   if(params.res){
     res = params.res;
   }
