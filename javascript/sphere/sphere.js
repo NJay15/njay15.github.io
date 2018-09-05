@@ -8,22 +8,28 @@ var amp;
 var hist;
 
 function preload(){
-	sound = loadSound('assets/nekhma.mp3');
+  //sound = loadSound('assets/nekhma.mp3');
 }
 
 
 function setup(){
-  sound.play();
+  //sound.play();
+  var params = getParams();
+  if(params.res){
+    res = params.res;
+  }
   createCanvas(innerWidth, innerHeight, WEBGL);
   translate(width/2, height/2);
-  amp = new p5.Amplitude();
-  amp.smooth(1);
+  audio = new p5.AudioIn();
+  audio.connect();
+  //amp = new p5.Amplitude();
+  //amp.smooth(1);
   hist = [];
 }
 
 function draw(){
   //rotateX(HALF_PI);
-  var lvl = amp.getLevel();
+  var lvl = audio.getLevel();//amp.getLevel();
   hist.push(lvl);
   if(hist.length > res){
 	  hist.splice(0, 1);
