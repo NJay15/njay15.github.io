@@ -33,18 +33,24 @@ function handleFile(file) {
 function convert (img) { 
  exp . background( 0 , 0 , 0 , 0 ) ;
  drawRotated( 0, img ) ;
- exp . image( pg, texRes, 0 , texRes, texRes) ;
+  exp . push( ) ;
+ exp . translate( texRes/ 2 + texRes, texRes/ 2) ;
+ exp . rotate( radians( 90 ) ) ;
+ exp . translate( - texRes/ 2 , - texRes/ 2 ) ;
+ exp . image( pg, 0 , 0 , texRes, texRes) ;
+ exp . pop( ) ;
+
  drawRotated( 120, img ) ;
- 
  exp . push( ) ;
- exp . translate( texRes/ 2 + texRes, texRes/ 2 + texRes) ;
+ exp . translate( texRes/ 2, texRes/ 2 + texRes) ;
  exp . rotate( radians(- 90 ) ) ;
  exp . translate( - texRes/ 2 , - texRes/ 2 ) ;
  exp . image( pg, 0 , 0 , texRes, texRes) ;
  exp . pop( ) ;
+ 
  drawRotated( - 120, img ) ;
  exp . push( ) ;
- exp . translate( texRes/ 2 + texRes* 2 , texRes/ 2 + texRes) ;
+ exp . translate( texRes/ 2 + texRes , texRes/ 2 + texRes) ;
  exp . rotate(radians( 180 ) ) ;
  exp . translate( - texRes/ 2 , - texRes/ 2 ) ;
  exp . image( pg, 0 , 0 , texRes, texRes) ;
@@ -55,9 +61,9 @@ function convert (img) {
 	 exp.strokeCap(PROJECT);
 	 exp . stroke( colorPicker.color()) ;
 	 exp . line( 40.5 , 0.5 , 47.5 , 0.5 ) ;
-	 exp . line( 40.5 , 0.5 , 40.5 , 15.5 ) ;
-	 exp . line( 40.5 , 15.5 , 55.5 , 15.5 ) ;
-	 exp . line( 55.5 , 8.5 , 55.5 , 15.5 ) ;
+	 exp . line( 47.5 , 0.5 , 47.5 , 15.5 ) ;
+	 exp . line( 32.5 , 15.5 , 47.5 , 15.5 ) ;
+	 exp . line( 32.5 , 8.5 , 32.5 , 15.5 ) ;
 }
  exp . save( "skin.png" ) ;
 }
